@@ -35,7 +35,7 @@
       { name: 'Janusz Palikot', role: 'Szef', tag: 'Biuro', hours: '9:00-17:00', schedule: 'Biuro' },
       { name: 'Włodzmierz Biały', role: 'Pracownik', tag: 'Biuro', hours: '9:00-17:00', schedule: 'Biuro' },
       { name: 'Jeremiasz Różowy-Człowiek', role: 'Pracownik', tag: 'Biuro', hours: '9:00-17:00', schedule: 'Biuro' },
-      { name: 'Anna Kozieł', role: 'Pracownik', tag: 'Biuro', hours: '9:00-17:00', schedule: 'Biuro' }, 
+      { name: 'Anna Kozieł', role: 'Pracownik', tag: 'Biuro', hours: '9:00-17:00', schedule: 'Biuro' },
       // Add other users here
     ];
   
@@ -44,6 +44,7 @@
     function selectUser(user: User) {
       selectedUser = user;
     }
+    
   </script>
   
   <div class="flex flex-col h-screen">
@@ -101,15 +102,16 @@
         <div class="flex space-x-4">
           <!-- Users List -->
           <div class="w-64">
-            {#each users as user}
+          <!-- Replace this div with button and add appropriate attributes -->
+          {#each users as user}
             <button type="button" class="flex items-center w-full p-2 space-x-2 border-b cursor-pointer text-left" on:click={() => selectUser(user)}>
-                <img src="/user.png" alt="person" class="w-10 h-10 rounded-full bg-gray-300">
-                <div>
-                <div class="text-sm font-semibold">{user.name}</div>
-                <div class="text-xs text-gray-500">{user.role}</div>
-                </div>
+            <img src="/user.png" alt="person" class="w-10 h-10 rounded-full bg-gray-300">
+            <div>
+              <div class="text-sm font-semibold">{user.name}</div>
+              <div class="text-xs text-gray-500">{user.role}</div>
+            </div>
             </button>
-            {/each}
+          {/each}
           </div>
           <!-- Schedule -->
           <div class="flex-grow">
@@ -165,4 +167,3 @@
       cursor: pointer;
     }
   </style>
-  
